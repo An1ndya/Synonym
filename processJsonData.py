@@ -2,7 +2,7 @@ import json
 
 
 
-with open('austere-json.txt', 'r') as file:
+with open('word-json\austere-json.txt', 'r') as file:
     data = file.read().replace('\n', '')
 parsed = json.loads(data)
 #print(parsed)

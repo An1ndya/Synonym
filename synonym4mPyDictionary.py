@@ -1,9 +1,17 @@
+#This program take a string input and search that word's synonym from pydictionary library
+#Its takes another parameter depth 
+# the program find all synonyms of given word and the again synonym all of the synonym, so it run like recuresively 
+# Just like a graph where head is the word you given
+# you gave depth greater than its get too far, maybe we can bind all the word somehow :D
+# If anyone one to increase her vocalbulary its efficent to learn similar word once 
+#you can create a list from here  paste the word to vocalbulary.com to practice that 
+
 from PyDictionary import PyDictionary
 dictionary=PyDictionary()
 
 
 word = input("Write down a single word: ")
-depth = input("Number of depth you want to traverse by synonym: ")
+depth = input("Number of depth you want to traverse by synonym(try less than 5): ")
 #word = "austere"
 #depth = 3
 wordlist =list()

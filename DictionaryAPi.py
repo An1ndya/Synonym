@@ -26,7 +26,7 @@ if path.exists(strpath):
 else:
     response = requests.get(url)
     data = response.text
-    storingfile = open(strpath, "x")
+    storingfile = open(strpath, "a")
     storingfile.write(data)  
     storingfile.close()
 

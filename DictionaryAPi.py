@@ -17,41 +17,53 @@ word = input("Write down a single word : ")
 word = word.lower()
 key = '7444d9af-d1e2-4aab-8e3e-e79c08958d0c' #key got from dictionaryAPi by register. Please try to  get a new key
 url = 'https://dictionaryapi.com/api/v3/references/thesaurus/json/' + word+ '?key=' + key
+#response = requests.get(url)
+#data = response.text
 
-#commented as word not reading and raising issue
-#strpath =  'word-json/' + word + '.json'
-#if os.path.exists(strpath):
-#    with open(strpath, 'r') as storedfile:
-#        data = storedfile.read().replace('\n', '')
-#        storedfile.close()
-#else:
-#    response = requests.get(url)
-#    data = response.text
-#    storingfile = open(strpath, "x")
-#    storingfile.write(data)  
-#    storingfile.close()
+#solve issue 
+strpath =  'C:/Users/Anindya/Documents/GitHub/Synonym-/word-json/' + word + '.json'
+if os.path.exists(strpath):
+    with open(strpath, 'r') as storedfile:
+        data = storedfile.read().replace('\n', '')
+        storedfile.close()
+else:
+    response = requests.get(url)
+    data = response.text
+    storingfile = open(strpath, "x")
+    storingfile.write(data)  
+    storingfile.close()
 
-response = requests.get(url)
-data = response.text
+
 parsed = json.loads(data)
 #perfectalignment = json.dumps(parsed, indent=4) #create alignment take space but easy to read 
 #print(perfectalignment)
+strpath =  "C:/Users/Anindya/Documents/GitHub/Synonym-/word-synonym/" + word + ".txt"
+file = open(strpath, "w")
 
 synonym = []
 count = 0
 for synlist in parsed[0]['meta']['syns']:
     for syn in synlist:
         synonym.append(syn)
+        file.write(syn + " ")
+        if count%10 == 0 :
+           file.write("\n")  
 print("synonym count: " + str(len(synonym)))
 print(synonym)
+file.write("\n synonym count: " + str(len(synonym))+ "\n \n")
 
 antonym = []
 count = 0
 for synlist in parsed[0]['meta']['ants']:
     for syn in synlist:
         antonym.append(syn)
+        file.write(syn + " ")
+        if count%10 == 0 :
+           file.write("\n") 
+
 print("antonym count: " + str(len(antonym)))
 print(antonym)
+file.write("\n antonym count: " + str(len(antonym))+ "\n \n")
 
 similar = []
 similarKey =['rel_list','near_list'] # generally sim_list and syn_list list are already in [meta]syns, so we exclude them
@@ -69,6 +81,14 @@ if len(similar) > 0:
     print("similar word count: " + str(len(similar)))
     print(similar)
 
+count = 0 
+for sim in similar:
+    file.write(sim + " ")
+    if count%10 == 0 :
+        file.write("\n")    
+
+file.write("\n similiar count: " + str(len(similar))+ "\n \n")
+file.close()
 '''
 #we dont need this part beacuse its already in meta[ants]; coded for known structure purpose
 opposite = []

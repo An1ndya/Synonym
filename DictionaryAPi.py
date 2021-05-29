@@ -9,7 +9,8 @@
 import requests
 import json
 import os.path
-from os import path
+#from os import path
+#import pathlib  
 
 word = input("Write down a single word : ")
 #word = 'austere'
@@ -17,9 +18,10 @@ word = word.lower()
 key = '7444d9af-d1e2-4aab-8e3e-e79c08958d0c' #key got from dictionaryAPi by register. Please try to  get a new key
 url = 'https://dictionaryapi.com/api/v3/references/thesaurus/json/' + word+ '?key=' + key
 
-
-strpath = 'word-json/' + word + '.json'
-if path.exists(strpath):
+#working_directory = os.getcwd()
+strpath =  'word-json/' + word + '.json'
+print(strpath)
+if os.path.exists(strpath):
     with open(strpath, 'r') as storedfile:
         data = storedfile.read().replace('\n', '')
     storedfile.close()

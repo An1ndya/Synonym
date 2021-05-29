@@ -18,20 +18,21 @@ word = word.lower()
 key = '7444d9af-d1e2-4aab-8e3e-e79c08958d0c' #key got from dictionaryAPi by register. Please try to  get a new key
 url = 'https://dictionaryapi.com/api/v3/references/thesaurus/json/' + word+ '?key=' + key
 
-#working_directory = os.getcwd()
-strpath =  'word-json/' + word + '.json'
-print(strpath)
-if os.path.exists(strpath):
-    with open(strpath, 'r') as storedfile:
-        data = storedfile.read().replace('\n', '')
-    storedfile.close()
-else:
-    response = requests.get(url)
-    data = response.text
-    storingfile = open(strpath, "x")
-    storingfile.write(data)  
-    storingfile.close()
+#commented as word not reading and raising issue
+#strpath =  'word-json/' + word + '.json'
+#if os.path.exists(strpath):
+#    with open(strpath, 'r') as storedfile:
+#        data = storedfile.read().replace('\n', '')
+#        storedfile.close()
+#else:
+#    response = requests.get(url)
+#    data = response.text
+#    storingfile = open(strpath, "x")
+#    storingfile.write(data)  
+#    storingfile.close()
 
+response = requests.get(url)
+data = response.text
 parsed = json.loads(data)
 #perfectalignment = json.dumps(parsed, indent=4) #create alignment take space but easy to read 
 #print(perfectalignment)

@@ -1,0 +1,57 @@
+irresolute halting 
+hesitant 
+indecisive 
+infirm 
+vacillating 
+wavering 
+characterless 
+effete 
+frail 
+invertebrate 
+limp-wristed 
+milk-and-water 
+namby-pamby 
+nerveless 
+soft 
+spineless 
+weak 
+weakened 
+weak-kneed 
+weakling 
+wet 
+wimpish 
+wimpy 
+wishy-washy 
+ambivalent 
+conflicted 
+equivocal 
+doubtful 
+faltering 
+questioning 
+uncertain 
+undecided 
+unsure 
+wobbly 
+flabby 
+flaccid 
+forceless 
+ineffective 
+ineffectual 
+
+ synonym count: 39
+ 
+decisive 
+determined 
+mettlesome 
+resolute 
+unrelenting 
+certain 
+convinced 
+positive 
+sure 
+
+ antonym count: 9
+ 
+
+ similiar count: 0
+ 

@@ -40,6 +40,7 @@ parsed = json.loads(data)
 strpath =  "C:/Users/Anindya/Documents/GitHub/Synonym-/word-synonym/" + word + ".txt"
 file = open(strpath, "w")
 
+file.write(word + "\n")
 synonym = []
 count = 0
 for synlist in parsed[0]['meta']['syns']:

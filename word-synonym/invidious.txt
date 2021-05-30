@@ -1,0 +1,37 @@
+invidious 
+covetous 
+envious 
+green-eyed 
+jaundiced 
+jealous 
+resentful 
+unenviable
+
+
+ synonym count: 6
+ 
+unenvious 
+
+ antonym count: 1
+ 
+begrudging 
+grudging 
+avaricious 
+grasping 
+greedy 
+rapacious 
+distrustful 
+suspicious 
+malicious 
+petty 
+spiteful 
+generous 
+kind 
+kindhearted 
+altruistic 
+benevolent 
+charitable 
+well-meaning 
+
+ similiar count: 18
+ 

@@ -1,4 +1,5 @@
-itinerant ambulant 
+itinerant 
+ambulant 
 ambulatory 
 errant 
 fugitive 

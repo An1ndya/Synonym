@@ -1,4 +1,5 @@
-irresolute halting 
+irresolute 
+halting 
 hesitant 
 indecisive 
 infirm 

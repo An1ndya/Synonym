@@ -21,7 +21,7 @@ url = 'https://dictionaryapi.com/api/v3/references/thesaurus/json/' + word+ '?ke
 #data = response.text
 
 #solve issue 
-strpath =  'C:/Users/Anindya/Documents/GitHub/Synonym-/word-json/' + word + '.json'
+strpath =  'C:/Users/Anindya/Documents/GitHub/Synonym-data/word-json/' + word + '.json'
 if os.path.exists(strpath):
     with open(strpath, 'r') as storedfile:
         data = storedfile.read().replace('\n', '')
@@ -29,6 +29,8 @@ if os.path.exists(strpath):
 else:
     response = requests.get(url)
     data = response.text
+    data= json.loads(data)
+    data = json.dumps(data, indent=4)
     storingfile = open(strpath, "w")
     storingfile.write(data)  
     storingfile.close()
@@ -37,7 +39,7 @@ else:
 parsed = json.loads(data)
 #perfectalignment = json.dumps(parsed, indent=4) #create alignment take space but easy to read 
 #print(perfectalignment)
-strpath =  "C:/Users/Anindya/Documents/GitHub/Synonym-/word-synonym/" + word + ".txt"
+strpath =  "C:/Users/Anindya/Documents/GitHub/Synonym-data/word-synonym/" + word + ".txt"
 file = open(strpath, "w")
 
 file.write(word + "\n")

@@ -1,17 +1,22 @@
-from selenium import webdriver
-from BeautifulSoup import BeautifulSoup
-import pandas as pd
 
 
-#word = input("Write down a single word : ")
-word = "run"
-url = 'https://www.google.com/search?q=define+' + word
+import requests
+from bs4 import BeautifulSoup
+   
+# Enter the City Name
 
-driver = webdriver.Chrome("/usr/lib/chromium-browser/chromedriver")
-
-driver.get(url)
-
-content = driver.page_source
-soup = BeautifulSoup(content)
-
-print(soup)
+search = "define absent"
+  
+# URL 
+url = "https://www.google.com/search?&q="+search
+   
+# Sending HTTP request
+req = requests.get(url)
+  
+# Pulling HTTP data from internet
+sor = BeautifulSoup(req.text, "html.parser") 
+  
+# Finding temperature in Celsius
+temp = sor.find("div", class_='BNeawe').text
+  
+print(sor)
